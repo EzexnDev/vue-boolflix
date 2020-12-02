@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>ex-dischi-musicali</title>
+
+
+    <!-- Font Awesome 5.15.1 (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- VueJS -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <!-- JS Frameworks -->
+
+    <!-- jQuery 3.5.1 (CDN) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="div" id="app">
+        <header>
+            <div class="container-fluid d-flex">
+                <div class="row title-row d-flex justify-content-between">
+                    <img class='ml-2' src="logo.png" alt="logo" />
+                    <form class="form-inline" v-on:submit.prevent>
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" v-model='filterInput' v-on:keyup.enter="getMovies()">
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <div class="cds-container container">
+            <!-- Disco ad esempio -->
+            <div class="cd" v-for='cd in elements'>
+                <img :src=imgSrc+cd.poster_path alt="">
+                <span class="author">{{truncateTitle(cd.title, 35)}}</span>
+                <!-- <span class="author">{{truncateTitle(cd.original_title,25)}}</span> -->
+                <span class="year">{{cd.language}}</span>
+                <span class="year">{{cd.vote_average}}</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-space-around mb-4">
+                <button v-for="(n, i) in totalPages" class="btn btn-primary p-2 m-2" @click="setCurrentPage(n)">{{n}}</button>
+            </div>
+
+            <!-- <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item" v-for="(n, i) in totalPages" class="btn btn-primary p-2 m-2" @click="setCurrentPage(n)" v-if="(n < 11)"><a class="page-link" href="#">{{n}}</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </div>
+
+
+
+    <script src="js/main.js" charset="utf-8"></script>
+</body>
+
+</html>

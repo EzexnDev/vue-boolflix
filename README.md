@@ -1,1 +1,1 @@
-vue-boolflix
+vue-dischi
