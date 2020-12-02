@@ -49,7 +49,7 @@
         </div>
         <div class="container">
             <div class="row d-flex justify-space-around mb-4">
-                <button v-for="(n, i) in totalPages" class="btn btn-primary p-2 m-2" @click="setCurrentPage(n)">{{n}}</button>
+                <button v-for="(n, i) in totalPages" v-if="totalPages > 0" class="btn btn-primary p-2 m-2" @click="setCurrentPage(n)">{{n}}</button>
             </div>
 
             <!-- <nav aria-label="Page navigation example">
