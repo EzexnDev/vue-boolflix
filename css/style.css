@@ -15,6 +15,11 @@ body {
     width: 100%;
 }
 
+.flag{
+    width: 20px;
+    height: 20px;
+}
+
 .container {
     height: 100%;
     display: flex;

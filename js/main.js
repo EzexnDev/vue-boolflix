@@ -1,3 +1,7 @@
+
+
+
+
 const app = new Vue({
     el: "#app",
     data: {
@@ -80,6 +84,19 @@ const app = new Vue({
 
             console.log(Math.ceil(vote / 2));
             return index <= Math.ceil(vote / 2) ? 'fas fa-star' : 'far fa-star';
+        },
+        getLanguageIcon(language){
+            if(language=='en'){
+                return 'flags/uk.png'
+            } else if(language=='it'){
+                return 'flags/italy.png'
+            } else if(language=='ja'){
+                return 'flags/japan.png'
+            } else if(language == 'fr'){
+                return 'flags/france.jpg'
+            } else if (language == 'de'){
+                return 'flags/germany.png'
+            }
         }
     }
 });
