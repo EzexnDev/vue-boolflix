@@ -40,11 +40,13 @@
         <div class="cds-container container">
             <!-- Disco ad esempio -->
             <div class="cd" v-for='cd in elements'>
-                <img :src=imgSrc+cd.poster_path alt="">
-                <span class="author">{{truncateTitle(cd.title, 35)}}</span>
+                <img :src=getImage(cd.poster_path) alt="">
+                <span class="author">{{cd.title}}</span>
+                <span class="author">{{cd.original_name}}</span>
                 <!-- <span class="author">{{truncateTitle(cd.original_title,25)}}</span> -->
                 <span class="year">{{cd.language}}</span>
-                <span class="year">{{cd.vote_average}}</span>
+                <span class="year"><i v-for='index in 5' v-bind:class='getStarClass(index, cd.vote_average)'></i></span>
+                <span class="year">{{cd.original_language}}</span>
             </div>
         </div>
         <div class="container">

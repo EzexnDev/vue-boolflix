@@ -61,6 +61,7 @@ header img {
     color: white;
     font-size: 22px;
     text-transform: uppercase;
+    text-overflow: ellipsis;
 }
 
 .cd span.author {
@@ -70,4 +71,5 @@ header img {
 
 .cd span.year {
     color: grey;
+    text-overflow: ellipsis;
 }
