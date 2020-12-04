@@ -41,24 +41,74 @@ header img {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 100px 0;
+    padding: 50px;
 }
-
+.yellow{
+    color: gold;
+}
 .cd {
+    margin: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     flex-basis: 200px;
-    padding: 20px;
-    height: 450px;
-    margin: 10px 20px;
-    background: rgb(46, 58, 70);
+    height: 350px;
     text-align: center;
+    margin: 15px;
+    transform-style: preserve-3d;
+
+}
+.cd .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+.cd:hover .box{
+    transform: rotateY(180deg);
+    animation-fill-mode: forwards;
 }
 
-.cd img {
+.cd .box .img-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cd  .box .content-box{
+    height: 350px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.cd  .content-box div{
+    transform-style: preserve-3d;
+    padding: 20px;
+}
+.cd .img-box img {
     max-width: 100%;
+    object-fit: fill;
+}
+
+.img-box > img {
+    height: 350px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    object-fit: fill;
 }
 
 .cd h3 {

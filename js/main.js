@@ -83,7 +83,7 @@ const app = new Vue({
         getStarClass(index, vote) {
 
             console.log(Math.ceil(vote / 2));
-            return index <= Math.ceil(vote / 2) ? 'fas fa-star' : 'far fa-star';
+            return index <= Math.ceil(vote / 2) ? 'fas fa-star yellow' : 'far fa-star';
         },
         getLanguageIcon(language){
             if(language=='en'){
@@ -96,6 +96,8 @@ const app = new Vue({
                 return 'flags/france.jpg'
             } else if (language == 'de'){
                 return 'flags/germany.png'
+            } else if (language == 'es'){
+                return 'flags/spain.png'
             }
         }
     }
